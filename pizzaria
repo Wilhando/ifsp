@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Cliente
+actor Atendente
+actor Administrador
+actor Cozinha
+actor Caixa
+
+rectangle "Sistema de Pizzaria" {
+    usecase "Realizar Pedido" as UC1
+    usecase "Gerenciar Cardápio" as UC2
+    usecase "Gerenciar Clientes" as UC3
+    usecase "Gerenciar Funcionários" as UC4
+    usecase "Gerar Relatórios" as UC5
+    usecase "Gerenciar Pedidos" as UC6
+
+    Cliente --> UC1
+    Atendente --> UC1
+    Atendente --> UC2
+    Atendente --> UC3
+    Administrador --> UC2
+    Administrador --> UC3
+    Administrador --> UC4
+    Administrador --> UC5
+    Atendente --> UC6
+    Caixa --> UC6
+    Cozinha --> UC6
+}
+
+@enduml
